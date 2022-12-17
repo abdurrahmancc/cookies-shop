@@ -1,0 +1,12 @@
+@media screen and (min-width:641px) {
+    #wishlist-Table td:first-child{
+        max-width: 200px;
+    }
+    #shopping-cart-table td:first-child{
+        max-width: 200px;
+    }
+    
+    #wishlist-Table td:second-child{
+        width: 200px !important;
+    }
+}

@@ -1,0 +1,108 @@
+#pagination .pagination {
+  display: flex;
+  list-style: none;
+  outline: none;
+  gap: 0px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#pagination .pagination > .active {
+  background-color: #643001;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+#pagination .pagination > li {
+  border: none;
+  height: 49px;
+  width: 51px;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+#pagination .pagination > li > a {
+  padding: 10px 20px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 20px;
+}
+#pagination .pagination > li {
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+#pagination .pagination > li:last-child {
+  border-right: none;
+}
+
+#pagination .pagination > li:hover {
+  background-color: #643001;
+  color: #ffffff;
+  transition: all;
+  transition-timing-function: linear;
+  transition-duration: 0.2s;
+}
+
+#pagination .nextStyle {
+  color: #643001;
+}
+#pagination .nextStyle:hover {
+  color: #ffffff;
+}
+
+#pagination .previousStyle {
+  color: #643001;
+}
+
+#pagination .disabled a:hover{
+cursor: not-allowed;
+background-color: white;
+color: rgba(0, 0, 0, 0.5);
+transition: none;
+}
+
+#pagination li.disabled:hover{
+cursor: not-allowed;
+background-color: white;
+color: rgba(0, 0, 0, 0.5);
+transition: none;
+}
+
+@media screen and (max-width: 768px) {
+  #pagination .pagination > li {
+    border: none;
+    height: 42px;
+    width: 40px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #pagination .pagination > li > a {
+    padding: 6px 15px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  #pagination .pagination > li {
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  #pagination .pagination > li:last-child {
+    border-right: none;
+  }
+}

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&family=Cantata+One&family=Ubuntu:wght@400;500;700&display=swap');
+/* ========== tailwind config ======== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ========== tailwind config end ======== */
+/* ========== setup font family start ======== */
+body,
+html {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+/* ========== setup font family end ======== */
+
+/* ==========  nav submenu animate start ============ */
+.sub-menu-animate{
+    left: 0;
+    transition: left .2s linear
+  }
+  .sub-menu-animate:hover{
+    left: 10px;
+  }
+/* ==========  nav submenu animate start ============ */
+
+
+.horizontal-slider {
+  width: 100%;
+  /* max-width: 216px; */
+  height: 18px;
+}
+
+.example-thumb {
+  font-size: 12px;
+  text-align: center;
+  background-color: #643001;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.example-thumb:focus{
+  outline: none !important;
+}
+
+.example-thumb.active {
+  background-color: #643001;
+}
+
+.example-track {
+  position: relative;
+  background: #ddd;
+  height: 5px !important;
+}
+
+.example-track.example-track-1 {
+  background: #FFA111;
+  height: 5px !important;
+}
+
+.example-track.example-track-2 {
+  background: #ddd;
+  height: 5px !important;
+}
+
+.horizontal-slider .example-track {
+  top: 8px;
+  height: 10px;
+}
+
+.horizontal-slider .example-thumb {
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
