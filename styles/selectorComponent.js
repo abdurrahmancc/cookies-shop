@@ -26,6 +26,7 @@ export const searchCategorySelected = {
   menuList: (base) => ({
     ...base,
     padding: 0,
+    color: "#000",
   }),
   dropdownIndicator: (base) => ({
     ...base,

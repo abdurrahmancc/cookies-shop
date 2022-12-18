@@ -26,10 +26,9 @@ interface option {
 }
 
 const options: option[] = [
-  { value: "English", label: "ENG" },
-  { value: "Spanish", label: "ESP" },
-  { value: "French", label: "EPO" },
-  { value: "Arabic", label: "ARA" },
+  { value: "cookies", label: "Cookies" },
+  { value: "cakes", label: "Cakes" },
+  { value: "chocolates", label: "Chocolates" },
 ];
 
 const MiddleHeader1 = () => {

@@ -1,3 +1,10 @@
+#category-select-component .css-1wy0on6{
+    display: none !important;
+    width: 0 !important;
+}
 #category-select-component .css-1hb7zxy-IndicatorsContainer{
     display: none !important;
+    width: 0 !important;
+    margin: 0 !important;
+    background-color: none;
 }
