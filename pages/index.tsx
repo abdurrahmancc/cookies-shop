@@ -74,7 +74,6 @@ const Home = ({ products }: Products) => {
       </header>
       <main className="bg-[#FFFAF3]">
         {/* ======== about cookies start ======= */}
-
         <section>
           <AboutCookies />
         </section>
