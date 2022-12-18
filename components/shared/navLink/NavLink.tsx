@@ -98,7 +98,7 @@ const NavLink: FC<PropsWithChildren<Props>> = ({ children: textColor }) => {
         </li>
 
         <li className="flex hover:bg-inherit font-[500] gap-[10px] items-center">
-          <Link href={"/home"} className={`text-lg ${textColor} font-[500] hover:bg-inherit px-0`}>
+          <Link href={"/blogs"} className={`text-lg ${textColor} font-[500] hover:bg-inherit px-0`}>
             Blog
           </Link>
         </li>
