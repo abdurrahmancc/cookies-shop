@@ -9,7 +9,7 @@ interface Products {
 const PopularProducts = ({ products }: Products) => {
   return (
     <div className="pt-[32px] pb-6 relative">
-      <h2 className="text-primary xl:text-[48px] xl:leading-[62px] lg:text-3xl sm:text-2xl text-xl  font-[Candal] pb-8 ">
+      <h2 className="text-primary xl:text-[48px] xl:leading-[62px] lg:text-3xl sm:text-2xl text-xl font-[Candal] pb-8 ">
         Popular Products
       </h2>
 

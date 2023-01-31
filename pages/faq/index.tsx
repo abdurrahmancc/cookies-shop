@@ -1,5 +1,7 @@
 import React from "react";
 import BlogSec from "../../components/blogs/BlogSec";
+import Faq from "../../components/Faq/Faq";
+import FaqQuestionForm from "../../components/Faq/FaqQuestionForm";
 import Footer from "../../components/footer/Footer";
 import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
@@ -9,10 +11,10 @@ import SEO from "../../components/SEO/SEO";
 import Newsletter from "../../components/shared/newsletter/Newsletter";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
 
-const Blogs = () => {
+const FaqPage = () => {
   return (
     <>
-      <SEO pageTitle="blogs" />
+      <SEO pageTitle="faq" />
       <header className="bg-white">
         {/* =========== top header start ======== */}
         <TopHeader1 />
@@ -29,7 +31,10 @@ const Blogs = () => {
       </header>
       <main className="bg-white">
         <section className="max-w-[1200px] pt-[64px] lg:mx-auto mx-5">
-          <BlogSec />
+          <Faq />
+        </section>
+        <section className="max-w-[1200px] pt-[64px] lg:mx-auto mx-5">
+          <FaqQuestionForm />
         </section>
 
         {/* ======== Newsletter start ======= */}
@@ -48,4 +53,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default FaqPage;

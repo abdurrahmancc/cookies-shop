@@ -1,0 +1,6 @@
+#faq-Collapsible .Collapsible__trigger.is-open .plus {
+  display: none;
+}
+#faq-Collapsible .Collapsible__trigger.is-closed .minus{
+    display: none;
+}

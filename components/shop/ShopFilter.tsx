@@ -46,7 +46,9 @@ const ShopFilter = () => {
           <div>
             <div className="flex gap-[10px] items-center">
               <div className="w-[14px] h-1 border border-primary"></div>
-              <h4 className="text-[16px] text-primary leading-[16px] font-[500]">Cookies</h4>
+              <h4 className="text-[16px] capitalize text-primary leading-[16px] font-[500]">
+                Cookies
+              </h4>
             </div>
             <div className="flex pl-6 mt-3 flex-col gap-[10px]">
               {cookies.map((cookie) => (
@@ -71,7 +73,9 @@ const ShopFilter = () => {
           <div className="mt-4">
             <div className="flex gap-[10px] items-center">
               <div className="w-[14px] h-1 border border-primary"></div>
-              <h4 className="text-[16px] text-primary leading-[16px] font-[500]">Cookies</h4>
+              <h4 className="text-[16px] capitalize text-primary leading-[16px] font-[500]">
+                cakes
+              </h4>
             </div>
             <div className="flex pl-6 mt-3 flex-col gap-[10px]">
               {cakes.map((cookie, index) => (
@@ -96,7 +100,9 @@ const ShopFilter = () => {
           <div className="mt-4">
             <div className="flex gap-[10px] items-center">
               <div className="w-[14px] h-1 border border-primary"></div>
-              <h4 className="text-[16px] text-primary leading-[16px] font-[500]">Cookies</h4>
+              <h4 className="text-[16px] capitalize text-primary leading-[16px] font-[500]">
+                chocolates
+              </h4>
             </div>
             <div className="flex pl-6 mt-3 flex-col gap-[10px]">
               {chocolates.map((cookie) => (

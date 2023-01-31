@@ -20,12 +20,12 @@ type FromData = {
   searchItems: string;
 };
 
-interface option {
+interface Option {
   value: string;
   label: string;
 }
 
-const options: option[] = [
+const options: Option[] = [
   { value: "cookies", label: "Cookies" },
   { value: "cakes", label: "Cakes" },
   { value: "chocolates", label: "Chocolates" },
@@ -33,7 +33,7 @@ const options: option[] = [
 
 const MiddleHeader1 = () => {
   const [toggle, setToggle] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<option | null>(null);
+  const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const { wishlist, cart } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
@@ -95,6 +95,8 @@ const MiddleHeader1 = () => {
               </div>
             </form>
           </div>
+          {/*----- category search from end ------*/}
+          {/*----- for mobile toggle start ------*/}
           <div
             className="lg:hidden cursor-pointer"
             id="navToggle2"
@@ -102,7 +104,7 @@ const MiddleHeader1 = () => {
           >
             <VscThreeBars className="text-3xl text-black" />
           </div>
-          {/*----- category search from end ------*/}
+          {/*----- for mobile toggle end ------*/}
           <ul className="lg:flex items-center gap-5 hidden ">
             <li>
               <div className="flex items-center gap-2">

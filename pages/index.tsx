@@ -28,10 +28,6 @@ const Home = ({ products }: Products) => {
   const state = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
-  const handleIncrese = () => {
-    // dispatch(ordered(1));
-  };
-
   let results: Product[] = [];
 
   const keys = ["6391e205bb97e83bf5c2119e", "6391e209bb97e83bf5c211a0"];

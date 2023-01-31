@@ -8,7 +8,7 @@ import TopHeader1 from "../../components/headers/TopHeader1";
 import Banner1 from "../../components/home/banner/Banner1";
 import Newsletter from "../../components/shared/newsletter/Newsletter";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
-import GoogleMap from "../../components/shoppingCart/GoogleMap";
+import GoogleMap from "../../components/contact/GoogleMap";
 
 const Contact = () => {
   return (

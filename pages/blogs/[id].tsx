@@ -1,5 +1,7 @@
+import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import BlogSec from "../../components/blogs/BlogSec";
+import BlogComments from "../../components/blogDetails/BlogComments";
+import BlogDetails from "../../components/blogDetails/BlogDetails";
 import Footer from "../../components/footer/Footer";
 import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
@@ -8,8 +10,16 @@ import Banner1 from "../../components/home/banner/Banner1";
 import SEO from "../../components/SEO/SEO";
 import Newsletter from "../../components/shared/newsletter/Newsletter";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
+import { blogsData } from "../../database/models/data";
+import { BlogsDataModel } from "../../types/types";
+import RelatedPosts from "./RelatedPosts";
 
-const Blogs = () => {
+type Props = {
+  blog: BlogsDataModel;
+  blogs: BlogsDataModel[];
+};
+
+const BlogDetailsPage = ({ blog, blogs }: Props) => {
   return (
     <>
       <SEO pageTitle="blogs" />
@@ -29,11 +39,21 @@ const Blogs = () => {
       </header>
       <main className="bg-white">
         <section className="max-w-[1200px] pt-[64px] lg:mx-auto mx-5">
-          <BlogSec />
+          <BlogDetails blog={blog} />{" "}
         </section>
+        {/* =========== blog comment start ============= */}
+        <section className="max-w-[1200px] lg:mx-auto mx-5">
+          <BlogComments />{" "}
+        </section>
+        {/* =========== blog comment end ============= */}
+        {/* =========== blog Related Posts start ============= */}
+        <section className="max-w-[1200px] pt-[64px] lg:mx-auto mx-5">
+          <RelatedPosts blogs={blogs} />
+        </section>
+        {/* =========== blog Related Posts end ============= */}
 
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] pb-[60px] mt-[100px] lg:mx-auto mx-5">
+        <section className="max-w-[1200px] pb-[60px] mt-[80px] lg:mx-auto mx-5">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}
@@ -48,4 +68,30 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default BlogDetailsPage;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const blogs = blogsData;
+  const paths = blogs.map((blog: any) => ({
+    params: {
+      id: blog._id,
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  const { id } = params;
+  const blogs = blogsData;
+  const blog = blogs.find((prod) => prod?._id === id);
+
+  return {
+    props: {
+      blog,
+      blogs,
+    },
+  };
+};

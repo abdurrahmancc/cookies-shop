@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { IoCloseCircle } from "react-icons/io5";
 import bg from "../../assets/login/register-bg.png";

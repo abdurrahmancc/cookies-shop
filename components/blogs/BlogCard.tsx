@@ -1,8 +1,15 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
-import Blogs from "../../pages/blogs";
+import { BlogsDataModel } from "../../types/types";
 
-const BlogCard = ({ blog }: any) => {
+type Props = {
+  blog: BlogsDataModel;
+};
+
+const BlogCard = ({ blog }: Props) => {
+  const { push } = useRouter();
+
   return (
     <div
       style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.1)` }}
@@ -25,7 +32,10 @@ const BlogCard = ({ blog }: any) => {
         <p className="text-[16px] mb-4 text-[rgba(0,0,0,0.7)] leading-[20px] ">
           {blog?.description}
         </p>
-        <button className="text-[#643001] text-[15px] font-[500] leading-[15px] ">
+        <button
+          onClick={() => push(`/blogs/${blog?._id}`)}
+          className="text-[#643001] text-[15px] font-[500] leading-[15px] "
+        >
           Read More...
         </button>
       </div>

@@ -32,6 +32,7 @@ export const searchCategorySelected = {
     ...base,
     display: "none",
   }),
+  indicatorSeparator: (styles) => ({ display: "none" }),
   input: (base, state) => ({
     ...base,
     color: "#000",

@@ -33,3 +33,11 @@ export type ProductModel = {
 export type CartModel = {
   _id: string
 }
+
+export type BlogsDataModel = {
+  _id: string
+  title: string
+  date: string
+  img: any
+  description: string
+}
