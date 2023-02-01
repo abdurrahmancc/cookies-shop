@@ -15,6 +15,7 @@ import DrawerSidebar from "../shared/drawerSidebar/DrawerSidebar";
 import { useAppDispatch, useAppSelector } from "../../redux/app/reduxHooks";
 import { fetchWishlist } from "../../redux/features/wishlist/wishlistSlice";
 import { fetchCarts } from "../../redux/features/shoppingCart/shoppingCartSlice";
+import { useRouter } from "next/router";
 
 type FromData = {
   searchItems: string;
@@ -32,6 +33,7 @@ const options: Option[] = [
 ];
 
 const MiddleHeader1 = () => {
+  const { push } = useRouter();
   const [toggle, setToggle] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const { wishlist, cart } = useAppSelector((state) => state);
@@ -149,7 +151,10 @@ const MiddleHeader1 = () => {
               </div>
             </li>
             <li>
-              <div className=" rounded-full flex items-center gap-2">
+              <div
+                onClick={() => push("/dashboard/userDashboard")}
+                className="cursor-pointer rounded-full flex items-center gap-2"
+              >
                 <FaUserCircle className="text-primary w-[35px] h-[35px]" />
                 <span className="text-primary text-sm  font-[500]">Account</span>
               </div>

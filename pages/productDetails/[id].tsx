@@ -13,6 +13,7 @@ import axios from "axios";
 import BottomProductDetails from "../../components/productDetails/BottomProductDetails";
 import RelatedItems from "../../components/productDetails/RelatedItems";
 import Newsletter from "../../components/shared/newsletter/Newsletter";
+import SEO from "../../components/SEO/SEO";
 
 interface ProductModel {
   product: Product;
@@ -27,6 +28,7 @@ const Details = ({ product, products }: ProductModel) => {
 
   return (
     <div className="bg-[#ffffff]">
+      <SEO pageTitle={product?.name} />
       <header className="bg-white">
         {/* =========== top header start ======== */}
         <TopHeader1 />
