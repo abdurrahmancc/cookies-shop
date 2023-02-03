@@ -13,42 +13,44 @@ type MenuItems = {
 
 const menuItems: MenuItems[] = [
   { id: 1, label: "Dashboard", value: "/dashboard/userDashboard" },
-  { id: 2, label: "Orders", value: "/dashboard/order" },
-  { id: 3, label: "Downloads", value: "/dashboard/download" },
-  { id: 4, label: "Addresses", value: "/dashboard/userAddress" },
-  { id: 5, label: "Account details", value: "/dashboard/accountDetails" },
+  { id: 2, label: "Order Info", value: "/dashboard/order" },
+  { id: 5, label: "Account Info", value: "/dashboard/accountDetails" },
+  { id: 4, label: "Address Info", value: "/dashboard/userAddress" },
   { id: 6, label: "Logout", value: "/" },
 ];
 
 const DashboardSidebar = () => {
   const { pathname } = useRouter();
   return (
-    <div className="lg:w-[305px] lg:min-w-[305px] sm:w-[250px] min-w-[250px] h-[747px] bg-[#F2F4F8] rounded-[12px]">
-      <div className="pt-[25px] pb-[16px] border-b border-[#D1D1D1]">
-        <div className="relative w-[104px] h-[104px] mx-auto">
-          <div className="w-[20px] bottom-2 right-1  absolute border-[2px] border-[#ffffff] h-[20px] bg-primary rounded-full flex items-center justify-center">
-            <MdEdit className="text-[8px] text-[#031424]" />
+    <div className="lg:w-[272px] lg:min-w-[272px] sm:w-[250px] min-w-[250px] bg-[rgba(255,161,17,0.05)] max-h-[503px] rounded-[12px]">
+      <div className="pt-[26px] pb-8">
+        <div
+          style={{ filter: `drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))` }}
+          className="relative rounded-full border border-primary w-[71px] h-[71px] mx-auto"
+        >
+          <div className="w-[20px] bottom-0 right-1  absolute border-[2px] border-[#ffffff] h-[20px] bg-primary rounded-full flex items-center justify-center">
+            <MdEdit className="text-[8px] text-[#ffffff]" />
           </div>
           <figure>
             <Image src={user} width={104} className={"mx-auto"} height={104} alt="user" />
           </figure>
         </div>
-        <h5 className="text-[20px] text-center mt-[9px] leading-[35px] text-[#031424]">
-          James_Smith
+        <h5 className="text-[18px] font-[500] text-center mt-[12px] leading-[20px] text-primary">
+          Amine Tasla
         </h5>
       </div>
-      <div className="px-5 py-7">
-        <ul className="flex flex-col">
+      <div className="">
+        <ul className="flex gap-y-[18px] flex-col">
           {menuItems.map((item) => (
             <li
               key={item?.id}
-              className={`transition-all duration-150 ease-in-out text-lg lg:text-[20px] leading-8 pl-6 ${
+              className={`transition-all border border-[rgba(100,48,1,0.2)] font-[500] duration-150 ease-in-out text-[18px] leading-[20px] ${
                 pathname == item?.value
-                  ? "bg-info text-[#ffffff]"
-                  : "hover:text-[#ffffff] hover:bg-info text-[#031424]"
+                  ? "bg-primary text-[#ffffff] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.3)]"
+                  : "hover:text-[#ffffff] hover:drop-shadow-[0px_4px_4px_rgba(0,0,0,0.3)] hover:bg-primary text-primary"
               }`}
             >
-              <Link href={`${item?.value}`} className="block py-[10px]">
+              <Link href={`${item?.value}`} className="block text-center py-[16px]">
                 {" "}
                 {item?.label}
               </Link>

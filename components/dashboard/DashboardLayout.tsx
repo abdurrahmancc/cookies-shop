@@ -3,7 +3,7 @@ import DashboardSidebar from "./DashboardSidebar";
 
 const DashboardLayout = ({ children }: any) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-8 lg:gap-[57px] w-full">
+    <div className="flex flex-col sm:flex-row gap-8 w-full">
       <DashboardSidebar />
       {children}
     </div>

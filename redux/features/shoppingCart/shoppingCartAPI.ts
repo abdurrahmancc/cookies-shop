@@ -1,5 +1,3 @@
-import { Product } from '../../../types/types'
-
 const cookiesShoppingCart = 'cookies-shop-shopping-cart'
 
 /*--------- get all Carts -----------*/

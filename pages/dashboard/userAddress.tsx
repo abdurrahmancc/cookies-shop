@@ -34,7 +34,7 @@ const UserAddressPage = () => {
         {/* =========== breadcrumb end ======== */}
       </header>
       <main className="bg-[#ffffff]">
-        <section className="max-w-[1200px] mt-16 lg:mx-auto mx-5">
+        <section className="max-w-[1200px] pt-16 lg:mx-auto mx-5">
           <UserAddress />
         </section>
 

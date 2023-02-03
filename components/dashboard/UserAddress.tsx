@@ -4,36 +4,33 @@ import DashboardLayout from "./DashboardLayout";
 const UserAddress = () => {
   return (
     <DashboardLayout>
-      <div className="w-full pt-[14px]">
-        <h2 className="text-[#031424] text-[20px] leading-[30px] font-[600]">Addresses</h2>
-        <div className="flex pt-[15px] w-full">
-          <div className="h-[5px] bg-primary w-[86.5px]"></div>
-          <div className="border-b w-full border-[#AEAEAE]"></div>
+      <div className="w-full">
+        <h2 className="text-primary text-[30px] leading-[40px] font-[700]">Address Info</h2>
+        <div className="flex pt-[23px] w-full">
+          <div className="h-[5px] bg-primary w-[154px]"></div>
+          <div className="border-b w-full border-[rgba(0,0,0,0.25)]"></div>
         </div>
-        <div className="mt-10">
-          <p className="text-[16px] leading-10">
-            The following addresses will be used on the checkout page by default.
-          </p>
-          <div className="grid grid-cols-2 gap-7 mt-5">
+        <div className="mt-[57px]">
+          <div className="grid grid-cols-2 gap-7 gap-x-[74px] mt-5">
             <div>
-              <label className="text-[20px] w-full block border-b border-b-[#AEAEAE] pb-2 leading-[30px] font-[500] text-[#031424]">
-                BILLING ADDRESS
+              <label className="text-[24px] w-full block border-b-2 border-b-[rgba(0,0,0,0.3)] pb-[18px] leading-[25px] font-[500] text-[rgba(0,0,0,0.9)]">
+                Billing Address
               </label>
-              <p className="text-[16px] mt-5 mb-6 leading-6 text-[#626262]">
+              <p className="text-[16px] mt-4 mb-[26px] leading-[30px] text-[rgba(0,0,0,0.7)]">
                 You have not set up this type of address yet.
               </p>
-              <button className="w-[147px] h-[52px] bg-primary font-[500] leading-[32px] text-[#031424] md:text-[16px] text-sm bg-gradient-to-r from-[#f9c536] to-[#f9c536] btn-animate">
+              <button className="font-[500] h-[50px] w-[192px] text-[18px] leading-[20px] text-[#FFFFFF] bg-primary hover:bg-[#642f01ec]">
                 Add address
               </button>
             </div>
             <div>
-              <label className="text-[20px] w-full block border-b border-b-[#AEAEAE] pb-2 leading-[30px] font-[500] text-[#031424]">
-                SHIPPING ADDRESS
+              <label className="text-[24px] w-full block border-b-2 border-b-[rgba(0,0,0,0.3)] pb-[18px] leading-[25px] font-[500] text-[rgba(0,0,0,0.9)]">
+                Shipping Address
               </label>
-              <p className="text-[16px] mt-5 mb-6 leading-6 text-[#626262]">
+              <p className="text-[16px] mt-4 mb-[26px] leading-[30px] text-[rgba(0,0,0,0.7)]">
                 You have not set up this type of address yet.
               </p>
-              <button className="w-[147px] h-[52px] bg-primary font-[500] leading-[32px] text-[#031424] md:text-[16px] text-sm bg-gradient-to-r from-[#f9c536] to-[#f9c536] btn-animate">
+              <button className="font-[500] h-[50px] w-[192px] text-[18px] leading-[20px] text-[#FFFFFF] bg-primary hover:bg-[#642f01ec]">
                 Add address
               </button>
             </div>
