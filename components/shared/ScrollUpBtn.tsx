@@ -27,7 +27,7 @@ const ScrollUpBtn = () => {
   return (
     <>
       <button
-        className="cursor-pointer z-[10000] bg-[#944A07] animate-bounce fixed h-[60px] rounded-full w-[60px] bottom-14 right-7 text-[2rem]"
+        className="cursor-pointer z-[10000] bg-[#944A07] animate-bounce fixed h-[60px] rounded-full border-[5px] border-[#FFFFFF] w-[60px] bottom-14 right-7 text-[2rem]"
         onClick={scrollToTop}
         style={{ display: visible ? "inline" : "none" }}
         title="scroll Up"

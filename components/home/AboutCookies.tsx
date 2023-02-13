@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import React from "react";
 import about from "../../assets/home/about.png";
 
 const AboutCookies = () => {
+  const { push } = useRouter();
   return (
     <div
       style={{ backgroundImage: `url(${about.src})` }}
@@ -18,6 +20,7 @@ const AboutCookies = () => {
             country.
           </p>
           <button
+            onClick={() => push("/shop")}
             style={{ boxShadow: ` 0px 4px 4px rgba(0,0,0,0.25)` }}
             className="rounded-[46px] mt-[26px] shadow-md bg-[rgba(123,61,17,0.02)] py-[14px] px-10 border border-[#643001] font-[500] text-lg  text-primary "
           >

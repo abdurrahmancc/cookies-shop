@@ -35,14 +35,6 @@ const NavLink: FC<PropsWithChildren<Props>> = ({ children: textColor }) => {
                 <span className="px-8">Home 2</span>
               </Link>
             </li>
-            <li>
-              <Link
-                href={"/home2"}
-                className={`sub-menu-animate py-[10px] text-[15px] relative text-[rgba(0,0,0,0.7)] bg-white px-0 font-semibold hover:text-primary`}
-              >
-                <span className="px-8">Home 3</span>
-              </Link>
-            </li>
           </ul>
         </li>
         <li className="py-1 hover:bg-inherit" tabIndex={0}>
@@ -102,10 +94,40 @@ const NavLink: FC<PropsWithChildren<Props>> = ({ children: textColor }) => {
             Blog
           </Link>
         </li>
-        <li className="flex hover:bg-inherit font-[500] gap-[10px] items-center">
-          <Link href={"/home"} className={`text-lg ${textColor} hover:bg-inherit px-0`}>
-            Deals
+        <li className="py-1 hover:bg-inherit" tabIndex={0}>
+          <Link
+            href={"/"}
+            className={`text-lg focus:bg-inherit hover:bg-inherit ${textColor} px-0 flex font-[500] gap-[10px] items-center`}
+          >
+            Pages
+            <RiArrowDownSFill className="text-sm" />
           </Link>
+          <ul className="menu py-3 rounded-lg overflow-hidden bg-white z-50 w-[270px] shadow-xl">
+            <li>
+              <Link
+                href={"/faq"}
+                className={`sub-menu-animate text-[15px] py-[10px] relative text-[rgba(0,0,0,0.7)] bg-white px-0 font-semibold hover:text-primary`}
+              >
+                <span className="px-8">FAQ</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"/home2"}
+                className={`sub-menu-animate py-[10px] text-[15px] relative text-[rgba(0,0,0,0.7)] bg-white px-0 font-semibold hover:text-primary`}
+              >
+                <span className="px-8">Home 2</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"/home2"}
+                className={`sub-menu-animate py-[10px] text-[15px] relative text-[rgba(0,0,0,0.7)] bg-white px-0 font-semibold hover:text-primary`}
+              >
+                <span className="px-8">Home 3</span>
+              </Link>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>

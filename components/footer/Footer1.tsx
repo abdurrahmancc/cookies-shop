@@ -7,33 +7,35 @@ const Footer = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bg.src})` }}
-      className=" bg-primary  bg-no-repeat bg-right z-50 bg-contain"
+      className=" bg-[#944A07] box-border bg-no-repeat bg-right z-50 bg-contain"
     >
       <div className="footer max-w-[1200px] lg:mx-auto px-5 pt-[46px] pb-[52px] text-base-content">
         <div>
-          <span className="mb-3 font-semibold text-[#ffffff] text-lg">About Cookies Bakery</span>
-          <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover mb-2">
+          <span className="mb-3 font-[500] text-[#ffffff] text-lg">About Cookies Shop</span>
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">
             Cookies Bakery.com
           </a>
-          <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover mb-2">
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">
             Cookies Bakery Blog
           </a>
           <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover">Contact Us</a>
         </div>
         <div>
-          <span className="mb-3 font-semibold text-[#ffffff] text-lg">
-            Source Of Cookies Bakery
-          </span>
-          <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover mb-2">
+          <span className="mb-3 font-semibold text-[#ffffff] text-lg">Source Of Cookies Shop</span>
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">
             All Categories
+          </a>
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">Orders</a>
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">
+            Shippings
           </a>
         </div>
         <div>
           <span className="mb-3 font-semibold text-[#ffffff] text-lg">Cookies Bakery Services</span>
-          <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover mb-2">
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">
             Help Center
           </a>
-          <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover mb-2">
+          <a className="link text-[#ffffff] leading-[18px] text-[16px] link-hover mb-2">
             Privacy Policy
           </a>
           <a className="link text-[#ffffff] leading-[11px] text-[16px] link-hover">
@@ -51,9 +53,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-[#ffffff]">
-        <p className="text-[14px] leading-[12px] text-white text-center py-[22px]">
+        <p className="text-[13px] leading-[15px] text-white text-center py-[15px]">
           {" "}
-          &copy; 2021-2022, Cookies shop.com
+          &copy; 2021-2023, Cookies shop.com
         </p>
       </div>
     </div>

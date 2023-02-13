@@ -85,7 +85,7 @@ const shoppingCartSlice = createSlice({
         state.isLoading = false
         // console.log(action.payload)
         state.isError = false
-        state.carts = action.payload.keys
+        state.carts = action.payload?.keys
         state.shoppingCartQuantity = action.payload.shoppingCartQuantity
       })
       .addCase(fetchCarts.rejected, (state, action) => {

@@ -4,9 +4,9 @@ import MiddleHeader1 from "../../components/headers/MiddleHeader1";
 import TopHeader1 from "../../components/headers/TopHeader1";
 import UserDashboard from "../../components/dashboard/UserDashboard";
 import SEO from "../../components/SEO/SEO";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer1";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
-import Newsletter from "../../components/shared/newsletter/Newsletter";
+import Newsletter from "../../components/shared/newsletter/Newsletter1";
 import Breadcrumb from "../../components/shared/Breadcrumb/Breadcrumb";
 
 const breadcrumbData = [
@@ -38,7 +38,7 @@ const UserDashboardPage = () => {
         </section>
 
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] mt-16 lg:mx-auto mx-5">
+        <section className="mt-[100px]">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}

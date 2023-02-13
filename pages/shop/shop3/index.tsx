@@ -3,7 +3,7 @@ import BottomHeader1 from "../../../components/headers/BottomHeader1";
 import TopHeader1 from "../../../components/headers/TopHeader1";
 import ShopBanner from "../../../components/shop/ShopBanner";
 import Shop from "../../../components/shop/Shop3";
-import Footer from "../../../components/footer/Footer";
+import Footer from "../../../components/footer/Footer1";
 import ScrollUpBtn from "../../../components/shared/ScrollUpBtn";
 import SpecialOffer from "../../../components/shop/SpecialOffer";
 import { GetStaticProps } from "next";
@@ -12,10 +12,16 @@ import MiddleHeader1 from "../../../components/headers/MiddleHeader1";
 import data from "../../../database/data.json";
 import axios from "axios";
 import axiosPrivet from "../../../library/axiosPrivet";
+import BreadCrumbBanner from "../../../components/shared/Breadcrumb/BreadCrumbBanner";
 
 interface Products {
   products: Product[];
 }
+
+const breadcrumbData = [
+  { label: "home", value: "/" },
+  { label: "Shop", value: "/shop3" },
+];
 
 const Shop3 = ({ products }: Products) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +42,7 @@ const Shop3 = ({ products }: Products) => {
         <BottomHeader1 />
         {/* =========== bottom header end ======== */}
         {/* =========== banner start ======== */}
-        <ShopBanner />
+        <BreadCrumbBanner breadcrumbData={breadcrumbData} />
         {/* =========== banner end ======== */}
       </header>
       <main className="bg-white">
@@ -46,7 +52,7 @@ const Shop3 = ({ products }: Products) => {
         </section>
         {/* ========  products end ======= */}
         {/* ======== subscribe & special offer start ======= */}
-        <section className="mt-16 pb-[112px]  max-w-[1200px] mx-5 lg:mx-auto">
+        <section className="mt-16 pb-[100px]  max-w-[1200px] mx-5 lg:mx-auto">
           <SpecialOffer />
         </section>
         {/* ======== subscribe & special offer end ======= */}

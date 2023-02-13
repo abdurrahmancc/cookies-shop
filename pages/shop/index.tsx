@@ -3,18 +3,27 @@ import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
 import TopHeader1 from "../../components/headers/TopHeader1";
 import Shops from "../../components/shop/Shop";
-import ShopBanner from "../../components/shop/ShopBanner";
 import { Product } from "../../types/types";
 import { GetStaticProps } from "next";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer1";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
 import SpecialOffer from "../../components/shop/SpecialOffer";
-import data from "../../database/data.json";
-import axios from "axios";
+import BreadCrumbBanner from "../../components/shared/Breadcrumb/BreadCrumbBanner";
+import Newsletter1 from "../../components/shared/newsletter/Newsletter1";
 
 interface Products {
   products: Product[];
 }
+
+interface ProductModel {
+  product: Product;
+  products: Product[];
+}
+
+const breadcrumbData = [
+  { label: "home", value: "/" },
+  { label: "Shop", value: "/shop" },
+];
 
 const Shop1 = ({ products }: Products) => {
   return (
@@ -30,7 +39,7 @@ const Shop1 = ({ products }: Products) => {
         <BottomHeader1 />
         {/* =========== bottom header end ======== */}
         {/* =========== banner start ======== */}
-        <ShopBanner />
+        <BreadCrumbBanner breadcrumbData={breadcrumbData} />
         {/* =========== banner end ======== */}
       </header>
       <main className="bg-[#FFF6E8]">
@@ -40,10 +49,15 @@ const Shop1 = ({ products }: Products) => {
         </section>
         {/* ========  products end ======= */}
         {/* ======== subscribe & special offer start ======= */}
-        <section className="mt-16 pb-[112px] lg:mx-auto max-w-[1200px] mx-5">
+        <section className="mt-16 lg:mx-auto max-w-[1200px] mx-5">
           <SpecialOffer />
         </section>
         {/* ======== subscribe & special offer end ======= */}
+        {/* ======== Newsletter start ======= */}
+        <section className="mt-[100px]">
+          <Newsletter1 />
+        </section>
+        {/* ======== Newsletter end ======= */}
         {/* ======== scroll up button start ======= */}
         <ScrollUpBtn />
         {/* ======== scroll up button end ======= */}

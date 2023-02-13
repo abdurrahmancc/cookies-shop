@@ -1,22 +1,25 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import Footer from "../../components/footer/Footer";
+import React from "react";
+import Footer from "../../components/footer/Footer1";
 import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
 import TopHeader1 from "../../components/headers/TopHeader1";
 import Banner1 from "../../components/home/banner/Banner1";
-import Newsletter from "../../components/shared/newsletter/Newsletter";
+import BreadCrumbBanner from "../../components/shared/Breadcrumb/BreadCrumbBanner";
+import Newsletter from "../../components/shared/newsletter/Newsletter1";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
 import WishlistTable from "../../components/wishlist/WishlistTable";
-import { useAppDispatch, useAppSelector } from "../../redux/app/reduxHooks";
-import { removeToWishlist } from "../../redux/features/wishlist/wishlistSlice";
 import { Product } from "../../types/types";
 
 interface Products {
   products: Product[];
 }
+const breadcrumbData = [
+  { label: "home", value: "/" },
+  { label: "wishlist", value: "/wishlist" },
+];
 
 const Wishlist = ({ products }: Products) => {
   const router = useRouter();
@@ -38,7 +41,7 @@ const Wishlist = ({ products }: Products) => {
         <BottomHeader1 />
         {/* =========== bottom header end ======== */}
         {/* =========== banner start ======== */}
-        <Banner1 />
+        <BreadCrumbBanner breadcrumbData={breadcrumbData} />
         {/* =========== banner end ======== */}
       </header>
       <main className="bg-white">
@@ -58,7 +61,7 @@ const Wishlist = ({ products }: Products) => {
           </div>
         </section>
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] mt-[100px] lg:mx-auto mx-5">
+        <section className="mt-[100px]">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}

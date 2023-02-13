@@ -2,9 +2,23 @@ import Image from "next/image";
 import React from "react";
 import { HiArrowNarrowRight, HiShoppingCart } from "react-icons/hi";
 import chocolate from "../../../assets/product-img/chocolate.png";
-import chocolate2 from "../../../assets/product-img/chocolate-2.png";
+import deals1 from "../../../assets/product-img/deals-1.png";
+import deals2 from "../../../assets/product-img/deals-2.png";
+import deals3 from "../../../assets/product-img/deals-3.png";
+import deals4 from "../../../assets/product-img/deals-4.png";
+import { Product } from "../../../types/types";
+import DealsProductCard from "./DealsProductCard";
+import DealsProductTimer from "./DealsProductTimer";
 
-const DealsProduct = () => {
+const dealsProducts = [deals1, deals2, deals3, deals4];
+
+interface Products {
+  products: Product[];
+}
+
+const DealsProduct = ({ products }: Products) => {
+  const dealsProds = products && products.slice(0, 4);
+
   return (
     <div className="pt-[32px]">
       <div className="flex justify-between md:mx-10 lg:mx-0">
@@ -28,27 +42,7 @@ const DealsProduct = () => {
               </figure>
               <div className="absolute w-full top-[40%]">
                 <div className="bg-[rgba(100,48,1,0.3)] h-[50px] w-full ">
-                  <div className="flex items-center justify-center gap-[5px]">
-                    <div className="text-white bg-primary border rounded-[4px] w-[50px] h-[50px] text-[20px] font-bold leading-[22px] border-warning">
-                      <span>09</span> <br />
-                      <span>D</span>
-                    </div>
-                    <span className="text-white text-[20px] ">:</span>
-                    <div className="text-white bg-primary border rounded-[4px] w-[50px] h-[50px] text-[20px] font-bold leading-[22px] border-warning">
-                      <span>09</span> <br />
-                      <span>D</span>
-                    </div>
-                    <span className="text-white text-[20px] ">:</span>
-                    <div className="text-white bg-primary border rounded-[4px] w-[50px] h-[50px] text-[20px] font-bold leading-[22px] border-warning">
-                      <span>09</span> <br />
-                      <span>D</span>
-                    </div>
-                    <span className="text-white text-[20px] ">:</span>
-                    <div className="text-white bg-primary border rounded-[4px] w-[50px] h-[50px] text-[20px] font-bold leading-[22px] border-warning">
-                      <span>09</span> <br />
-                      <span>D</span>
-                    </div>
-                  </div>
+                  <DealsProductTimer />
                 </div>
               </div>
             </div>
@@ -63,31 +57,10 @@ const DealsProduct = () => {
             </div>
           </div>
           <div className="max-w-[592px] w-full mx-auto ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 justify-items-center ">
-              <div
-                style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
-                className="max-w-[292px] w-full rounded-[9px] bg-[#ffffff] flex justify-center box-border items-center h-[244px]"
-              >
-                <Image src={chocolate2} alt="chocolate" />
-              </div>
-              <div
-                style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
-                className="max-w-[292px] w-full  rounded-[9px] bg-[#ffffff] flex justify-center box-border items-center h-[244px]"
-              >
-                <Image src={chocolate2} alt="chocolate" />
-              </div>
-              <div
-                style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
-                className="max-w-[292px] w-full  rounded-[9px] bg-[#ffffff] flex justify-center box-border items-center h-[244px]"
-              >
-                <Image src={chocolate2} alt="chocolate" />
-              </div>
-              <div
-                style={{ boxShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)` }}
-                className="max-w-[292px] w-full  rounded-[9px] bg-[#ffffff] flex justify-center box-border items-center h-[244px]"
-              >
-                <Image src={chocolate2} alt="chocolate" />
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 justify-items-center">
+              {dealsProducts.map((img, i) => (
+                <DealsProductCard key={i} img={img} />
+              ))}
             </div>
           </div>
         </div>

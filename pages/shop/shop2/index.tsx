@@ -6,15 +6,21 @@ import Shops from "../../../components/shop/Shop";
 import ShopBanner from "../../../components/shop/ShopBanner";
 import { Product } from "../../../types/types";
 import { GetStaticProps } from "next";
-import Footer from "../../../components/footer/Footer";
+import Footer from "../../../components/footer/Footer1";
 import ScrollUpBtn from "../../../components/shared/ScrollUpBtn";
 import SpecialOffer from "../../../components/shop/SpecialOffer";
 import axios from "axios";
 import data from "../../../database/data.json";
+import BreadCrumbBanner from "../../../components/shared/Breadcrumb/BreadCrumbBanner";
 
 interface Products {
   products: Product[];
 }
+
+const breadcrumbData = [
+  { label: "home", value: "/" },
+  { label: "shop", value: "/shop" },
+];
 
 const Shop2 = ({ products }: Products) => {
   return (
@@ -30,7 +36,7 @@ const Shop2 = ({ products }: Products) => {
         <BottomHeader1 />
         {/* =========== bottom header end ======== */}
         {/* =========== banner start ======== */}
-        <ShopBanner />
+        <BreadCrumbBanner breadcrumbData={breadcrumbData} />
         {/* =========== banner end ======== */}
       </header>
       <main className="bg-[#FFF6E8]">

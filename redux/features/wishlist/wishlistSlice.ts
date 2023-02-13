@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Product } from '../../../types/types'
+import { ProductModel } from '../../../types/types'
+
 import {
   addWishlist,
   deleteAllWishlist,
@@ -9,7 +10,7 @@ import {
 
 type InitialState = {
   isLoading: boolean
-  wishlist: Product[] | []
+  wishlist: ProductModel[] | []
   isExist: boolean
   isError: boolean
   error: string

@@ -150,7 +150,7 @@ const ShopFilter = () => {
         <h3 className="text-lg pb-5 leading-[22px] font-[500] text-primary text-center">
           Top Rated Items
         </h3>
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-[16.2px]">
           <div className="bg-[rgba(0,0,0,0.05)] p-2 flex items-center gap-x-5">
             <div
               style={{ boxShadow: `0px 2px 4px rgba(0,0,0,0.06)` }}

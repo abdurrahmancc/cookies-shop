@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer1";
 import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
 import TopHeader1 from "../../components/headers/TopHeader1";
@@ -12,7 +12,7 @@ import data from "../../database/data.json";
 import axios from "axios";
 import BottomProductDetails from "../../components/productDetails/BottomProductDetails";
 import RelatedItems from "../../components/productDetails/RelatedItems";
-import Newsletter from "../../components/shared/newsletter/Newsletter";
+import Newsletter from "../../components/shared/newsletter/Newsletter1";
 import SEO from "../../components/SEO/SEO";
 
 interface ProductModel {
@@ -44,7 +44,7 @@ const Details = ({ product, products }: ProductModel) => {
         {/* =========== breadcrumb end ======== */}
       </header>
       <main>
-        <section className="max-w-[1200px] lg:mx-auto mx-5">
+        <section className="max-w-[1200px] pt-[26px] lg:mx-auto mx-5">
           <TopProductDetails product={product} />
         </section>
         <section className="max-w-[1200px] mt-16 lg:mx-auto mx-5">
@@ -57,7 +57,7 @@ const Details = ({ product, products }: ProductModel) => {
         {/* =========== Related Items start ========== */}
 
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] mt-16 lg:mx-auto mx-5">
+        <section className="mt-8">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}

@@ -5,9 +5,9 @@ import TopHeader1 from "../../components/headers/TopHeader1";
 import UserAddress from "../../components/dashboard/UserAddress";
 import SEO from "../../components/SEO/SEO";
 import Breadcrumb from "../../components/shared/Breadcrumb/Breadcrumb";
-import Newsletter from "../../components/shared/newsletter/Newsletter";
+import Newsletter from "../../components/shared/newsletter/Newsletter1";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer1";
 
 const breadcrumbData = [
   { label: "home", value: "/" },
@@ -39,7 +39,7 @@ const UserAddressPage = () => {
         </section>
 
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] mt-16 lg:mx-auto mx-5">
+        <section className="mt-[100px]">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}

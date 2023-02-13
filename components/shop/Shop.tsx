@@ -5,6 +5,7 @@ import ShopCard from "./ProductCard";
 import bg from "../../assets/bg-img/shop.png";
 import ShopFilter from "./ShopFilter";
 import { useRouter } from "next/router";
+import ShopProductCard from "./ShopProductCard";
 
 interface Products {
   products: Product[];
@@ -47,7 +48,7 @@ const Shop = ({ products }: Products) => {
           <div className=" mt-[46px] mx-auto ">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 max-w-[288px] mx-auto sm:max-w-[592px] md:max-w-[896px] gap-x-4 gap-y-[30px]">
               {products?.map((product: Product) => (
-                <ShopCard key={product?._id} product={product} />
+                <ShopProductCard key={product?._id} product={product} />
               ))}
             </div>
             <div className="flex justify-center mt-[45px] btn-group">

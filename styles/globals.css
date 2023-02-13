@@ -78,6 +78,10 @@ html {
   justify-content: center;
 }
 
+#home-1-popular-products-slider .swiper-slide{
+  padding-bottom: 32px !important;
+}
+
 
 
 

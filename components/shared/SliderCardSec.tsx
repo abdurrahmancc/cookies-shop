@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import ProductCard from "../shop/ProductCard";
 import { Product } from "../../types/types";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
+import QuickView from "../modals/QuickView";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 interface Products {
@@ -15,6 +16,8 @@ interface Products {
 
 const SliderCardSec = ({ products }: Products) => {
   const [isNavigationHidden, setIsNavigationHidden] = useState<boolean>(false);
+  const [QuickViewProd, setQuickViewProd] = useState<Product | {}>();
+
   return (
     <>
       <div
@@ -40,7 +43,10 @@ const SliderCardSec = ({ products }: Products) => {
             </div>
           </div>
         </div>
-        <div className="relative max-w-[592px] md:max-w-[896px] lg:max-w-[1200px] mx-auto">
+        <div
+          id="home-1-popular-products-slider"
+          className=" max-w-[592px] md:max-w-[896px] lg:max-w-[1200px] mx-auto"
+        >
           <Swiper
             spaceBetween={16}
             slidesPerView={4}
@@ -78,12 +84,13 @@ const SliderCardSec = ({ products }: Products) => {
           >
             {products?.map((product) => (
               <SwiperSlide key={product._id}>
-                <ProductCard product={product} />
+                <ProductCard product={product} setQuickViewProd={setQuickViewProd} />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </div>
+      {QuickViewProd && <QuickView product={QuickViewProd} />}
     </>
   );
 };

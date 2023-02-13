@@ -2,22 +2,28 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import BlogComments from "../../components/blogDetails/BlogComments";
 import BlogDetails from "../../components/blogDetails/BlogDetails";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer1";
 import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
 import TopHeader1 from "../../components/headers/TopHeader1";
 import Banner1 from "../../components/home/banner/Banner1";
 import SEO from "../../components/SEO/SEO";
-import Newsletter from "../../components/shared/newsletter/Newsletter";
+import Newsletter from "../../components/shared/newsletter/Newsletter1";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
 import { blogsData } from "../../database/models/data";
 import { BlogsDataModel } from "../../types/types";
-import RelatedPosts from "./RelatedPosts";
+import RelatedPosts from "../../components/blogDetails/RelatedPosts";
+import BreadCrumbBanner from "../../components/shared/Breadcrumb/BreadCrumbBanner";
 
 type Props = {
   blog: BlogsDataModel;
   blogs: BlogsDataModel[];
 };
+
+const breadcrumbData = [
+  { label: "home", value: "/" },
+  { label: "Blog Details", value: "/blogs" },
+];
 
 const BlogDetailsPage = ({ blog, blogs }: Props) => {
   return (
@@ -34,7 +40,7 @@ const BlogDetailsPage = ({ blog, blogs }: Props) => {
         <BottomHeader1 />
         {/* =========== bottom header end ======== */}
         {/* =========== banner start ======== */}
-        <Banner1 />
+        <BreadCrumbBanner breadcrumbData={breadcrumbData} />
         {/* =========== banner end ======== */}
       </header>
       <main className="bg-white">
@@ -53,7 +59,7 @@ const BlogDetailsPage = ({ blog, blogs }: Props) => {
         {/* =========== blog Related Posts end ============= */}
 
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] pb-[60px] mt-[80px] lg:mx-auto mx-5">
+        <section className="mt-[100px]">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}

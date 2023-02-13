@@ -1,5 +1,5 @@
 import React from "react";
-import SliderBlogs from "../../components/blogDetails/SliderBlogs";
+import SliderBlogs from "./SliderBlogs";
 import { BlogsDataModel } from "../../types/types";
 
 interface Props {

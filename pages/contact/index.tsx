@@ -1,14 +1,20 @@
 import Head from "next/head";
 import React from "react";
 import ContactSec from "../../components/contact/ContactSec";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer1";
 import BottomHeader1 from "../../components/headers/BottomHeader1";
 import MiddleHeader1 from "../../components/headers/MiddleHeader1";
 import TopHeader1 from "../../components/headers/TopHeader1";
 import Banner1 from "../../components/home/banner/Banner1";
-import Newsletter from "../../components/shared/newsletter/Newsletter";
+import Newsletter from "../../components/shared/newsletter/Newsletter1";
 import ScrollUpBtn from "../../components/shared/ScrollUpBtn";
 import GoogleMap from "../../components/contact/GoogleMap";
+import BreadCrumbBanner from "../../components/shared/Breadcrumb/BreadCrumbBanner";
+
+const breadcrumbData = [
+  { label: "home", value: "/" },
+  { label: "Contact Us", value: "/contact" },
+];
 
 const Contact = () => {
   return (
@@ -29,7 +35,7 @@ const Contact = () => {
         <BottomHeader1 />
         {/* =========== bottom header end ======== */}
         {/* =========== banner start ======== */}
-        <Banner1 />
+        <BreadCrumbBanner breadcrumbData={breadcrumbData} />
         {/* =========== banner end ======== */}
       </header>
       <main className="bg-white">
@@ -42,7 +48,7 @@ const Contact = () => {
         </section>
         {/*----------- google map end -------------*/}
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] pb-[60px] mt-[100px] lg:mx-auto mx-5">
+        <section className="mt-[100px]">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}

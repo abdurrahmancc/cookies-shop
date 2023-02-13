@@ -1,14 +1,14 @@
-const cookiesShoppingCart = 'cookies-shop-shopping-cart'
+const cookiesCart = 'cookies-bakery-cart'
 
 /*--------- get all Carts -----------*/
 export const getCarts = async () => {
   try {
     let shoppingCartQuantity: {} = {}
-    const storageWishlist = localStorage.getItem(cookiesShoppingCart)
+    const storageWishlist = localStorage.getItem(cookiesCart)
     if (storageWishlist) {
       shoppingCartQuantity = JSON.parse(storageWishlist)
     }
-    const keys = Object.keys(shoppingCartQuantity)
+    const keys = Object?.keys(shoppingCartQuantity || {})
     return { keys, shoppingCartQuantity }
   } catch (error: any) {
     console.log(error?.message)
@@ -18,13 +18,13 @@ export const getCarts = async () => {
 /*--------- delete Cart -----------*/
 export const deleteCart = async (id: string) => {
   try {
-    const storedCart = localStorage.getItem(cookiesShoppingCart)
+    const storedCart = localStorage.getItem(cookiesCart)
     if (storedCart) {
       const shoppingCart = await JSON.parse(storedCart)
       if (id in shoppingCart) {
         delete shoppingCart[id]
-        localStorage.setItem(cookiesShoppingCart, JSON.stringify(shoppingCart))
-        const keys = Object.keys(shoppingCart)
+        localStorage.setItem(cookiesCart, JSON.stringify(shoppingCart))
+        const keys = Object?.keys(shoppingCart || {})
         return keys
       }
     }
@@ -35,7 +35,7 @@ export const deleteCart = async (id: string) => {
 
 /*----------- delete All Shopping Cart  --------------*/
 export const deleteCarts = () => {
-  localStorage.removeItem(cookiesShoppingCart)
+  localStorage.removeItem(cookiesCart)
   const data: [] = []
   return data
 }
@@ -44,7 +44,7 @@ export const deleteCarts = () => {
 export const addCart = async (id: string) => {
   try {
     let shoppingCart: any = {}
-    const storedCart = localStorage.getItem(cookiesShoppingCart)
+    const storedCart = localStorage.getItem(cookiesCart)
     if (storedCart) {
       shoppingCart = JSON.parse(storedCart)
     }
@@ -59,7 +59,7 @@ export const addCart = async (id: string) => {
       shoppingCart[id] = 1
       _id = id
     }
-    localStorage.setItem(cookiesShoppingCart, JSON.stringify(shoppingCart))
+    localStorage.setItem(cookiesCart, JSON.stringify(shoppingCart))
     return _id
   } catch (error: any) {
     console.log(error?.message)
@@ -75,11 +75,11 @@ export const setCartQuantityToDb = async (data: any) => {
     }
 
     let shoppingCart: any = {}
-    const storedCart = localStorage.getItem(cookiesShoppingCart)
+    const storedCart = localStorage.getItem(cookiesCart)
     if (storedCart) {
       shoppingCart = JSON.parse(storedCart)
       shoppingCart[id] = quantity
-      localStorage.setItem(cookiesShoppingCart, JSON.stringify(shoppingCart))
+      localStorage.setItem(cookiesCart, JSON.stringify(shoppingCart))
       return quantity
     }
   } catch (error: any) {

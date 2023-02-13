@@ -1,11 +1,9 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { BiMinus } from "react-icons/bi";
 import { BsFacebook, BsTwitter } from "react-icons/bs";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { HiShoppingCart } from "react-icons/hi";
-import { AiFillInstagram } from "react-icons/ai";
 import { Product } from "../../types/types";
 import Rating from "../shared/Rating";
 import { IoLogoYoutube } from "react-icons/io5";
@@ -36,7 +34,7 @@ const ProductDetails = ({ product }: ProductModel) => {
       </div>
       <div>
         <div className="text-white inline-block capitalize bg-secondary text-[16px] rounded-[3px] px-3 py-[5px]">
-          {product?.badge}
+          {product?.badge || "new"}
         </div>
         <h2 className="text-[34px] mt-[26px] mb-[26px] leading-10 font-[500] text-primary">
           {product?.name}

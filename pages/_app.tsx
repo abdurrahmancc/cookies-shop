@@ -13,6 +13,7 @@ import "../styles/collapsibleComponents.css";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import { ToastContainer } from "react-toastify";
 import "../styles/tableComponent.css";
+import "../styles/swiper.css";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -14,7 +14,7 @@ const BottomHeader1 = () => {
     <div className="bg-[#944A07] hidden lg:block">
       <div className="max-w-[1200px]  lg:mx-auto mx-5">
         <div className="h-[67px] flex justify-between">
-          <div className="h-full">
+          <div className="h-full z-50">
             <Collapsible
               id="bottom-header-all-Categories"
               className=" h-full "

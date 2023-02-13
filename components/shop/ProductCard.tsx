@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { HiShoppingCart } from "react-icons/hi";
 import start from "../../assets/icons/star.svg";
@@ -8,18 +8,17 @@ import start2 from "../../assets/icons/star-2.svg";
 import { TbHeart } from "react-icons/tb";
 import img from "../../assets/product-img/butter-cookies-1.png";
 import { Product } from "../../types/types";
-import { useRouter } from "next/router";
 import { useAppDispatch } from "../../redux/app/reduxHooks";
-// import { addToCart } from "../../redux/features/cartList/cartListSlice";
 import { toast } from "react-toastify";
 import { addToWishlist } from "../../redux/features/wishlist/wishlistSlice";
 import { addToCart } from "../../redux/features/shoppingCart/shoppingCartSlice";
 
 interface Prod {
   product: Product;
+  setQuickViewProd: Dispatch<SetStateAction<Product | {}>>;
 }
 
-const ProductCard = ({ product }: Prod) => {
+const ProductCard = ({ product, setQuickViewProd }: Prod) => {
   const [isHoverCart, setIsHoverCart] = useState<boolean>(false);
   const dispatch = useAppDispatch();
 
@@ -44,9 +43,12 @@ const ProductCard = ({ product }: Prod) => {
         <Image src={img} alt="product image" className="w-full h-auto" />
       </figure>
       {/* ============= badge start ============= */}
-      <div className="text-[16px] top-[5px] left-[6px] rounded-[3px] absolute bg-[#944A07] py-[5px] capitalize px-[12px] font-[500] leading-[18px] text-[#FFFFFF]">
-        {product?.badge}
-      </div>
+      {product?.badge && (
+        <div className="text-[16px] top-[5px] left-[13px] rounded-[3px] absolute bg-[#FFA111] py-[5px] capitalize px-[12px] font-[500] leading-[18px] text-[#000000]">
+          {product?.badge}
+        </div>
+      )}
+
       {/* ============= badge end ============= */}
       {/* ========== cart compare wishlist start ======== */}
       <div className=" flex justify-center">
@@ -57,12 +59,17 @@ const ProductCard = ({ product }: Prod) => {
         >
           <div
             onClick={() => handleAddToWishlist(product?._id)}
-            className="bg-white w-[38px] h-[31px] flex justify-center items-center  rounded-[4px] text-primary"
+            className="bg-white hover:bg-primary hover:text-white duration-300 transition-all ease-in-out w-[38px] h-[31px] flex justify-center items-center cursor-pointer rounded-[4px] text-primary"
           >
             <TbHeart className="text-[24px]" />
           </div>
-          <div className="bg-white w-[38px] h-[31px] flex justify-center items-center  rounded-[4px] text-primary">
-            <IoEyeOutline className="text-[24px]" />
+          <div
+            onClick={() => setQuickViewProd(product)}
+            className="bg-white hover:bg-primary hover:text-white duration-300 transition-all cursor-pointer ease-in-out w-[38px] h-[31px] flex justify-center items-center  rounded-[4px] text-primary"
+          >
+            <label htmlFor="quick-view" className="cursor-pointer">
+              <IoEyeOutline className="text-[24px]" />
+            </label>
           </div>
         </div>
       </div>

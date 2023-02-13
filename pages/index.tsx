@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect, memo, useMemo } from "react";
-import styles from "../styles/Home.module.css";
-import Link from "next/link";
+import { useEffect } from "react";
 import TopHeader1 from "../components/headers/TopHeader1";
 import BottomHeader1 from "../components/headers/BottomHeader1";
 import Banner1 from "../components/home/banner/Banner1";
@@ -11,21 +8,21 @@ import DealsProduct from "../components/home/dealsProduct/DealsProduct";
 import PopularProducts from "../components/home/popularProducts/PopularProducts";
 import TopGiftProducts from "../components/home/topGiftProducts/TopGiftProducts";
 import DarkProduct from "../components/home/darkProduct/DarkProduct";
-import Newsletter from "../components/shared/newsletter/Newsletter";
-import Footer from "../components/footer/Footer";
+import Newsletter from "../components/shared/newsletter/Newsletter1";
+import Footer from "../components/footer/Footer1";
 import ScrollUpBtn from "../components/shared/ScrollUpBtn";
 import MiddleHeader1 from "../components/headers/MiddleHeader1";
 import { GetStaticProps } from "next";
 import { Product } from "../types/types";
-import { useAppDispatch, useAppSelector } from "../redux/app/reduxHooks";
+import { useAppDispatch } from "../redux/app/reduxHooks";
 import { fetchWishlist } from "../redux/features/wishlist/wishlistSlice";
+import FeatureProducts from "../components/home/FeatureProducts/FeatureProducts";
 
 interface Products {
   products: Product[];
 }
 
 const Home = ({ products }: Products) => {
-  const state = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
   let results: Product[] = [];
@@ -39,13 +36,9 @@ const Home = ({ products }: Products) => {
     });
   });
 
-  console.log(results);
-
   useEffect(() => {
     dispatch(fetchWishlist());
   }, [dispatch]);
-
-  console.log(state);
 
   return (
     <>
@@ -73,33 +66,38 @@ const Home = ({ products }: Products) => {
         <section>
           <AboutCookies />
         </section>
-
         {/* ======== about cookies end ======= */}
         {/* ======== deals products start ======= */}
-        <section className="max-w-[1200px] mt-[23px] lg:mx-auto mx-5">
-          <DealsProduct />
+        <section className="max-w-[1200px] mt-[32px] lg:mx-auto mx-5">
+          <DealsProduct products={products} />
         </section>
         {/* ======== deals products end ======= */}
         {/* ======== Popular Products start ======= */}
-        <section className="max-w-[1200px] mt-4 lg:mx-auto mx-5">
+        <section className="max-w-[1200px] mt-[32px] lg:mx-auto mx-5">
           <PopularProducts products={products} />
         </section>
         {/* ======== Top Products end ======= */}
         {/* ======== Popular Gift Products start ======= */}
-        <section className="max-w-[1200px] mt-4 lg:mx-auto mx-5">
+        <section className="max-w-[1200px] mt-[32px] lg:mx-auto mx-5">
           <TopGiftProducts />
         </section>
         {/* ======== Popular Gift Products end ======= */}
         {/* ======== dark chocolate Products start ======= */}
-        <section className="max-w-[1200px] mt-4 lg:mx-auto mx-5">
+        <section className="max-w-[1200px] mt-[64px] lg:mx-auto mx-5">
           <DarkProduct />
         </section>
         {/* ======== DARK chocolate Products end ======= */}
         {/* ======== Newsletter start ======= */}
-        <section className="max-w-[1200px] mt-5 lg:mx-auto mx-5">
+        <section className="mt-[64px]">
           <Newsletter />
         </section>
         {/* ======== Newsletter end ======= */}
+        {/* ======== Feature Products start ======= */}
+        <section className="max-w-[1200px] mt-[64px] pb-[64px] lg:mx-auto mx-5">
+          <FeatureProducts products={products} />
+        </section>
+        {/* ======== Feature Products end ======= */}
+
         {/* ======== scroll up button start ======= */}
         <ScrollUpBtn />
         {/* ======== scroll up button end ======= */}

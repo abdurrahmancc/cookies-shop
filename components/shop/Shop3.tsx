@@ -4,6 +4,8 @@ import bg from "../../assets/bg-img/shop.png";
 import ShopCard from "./ProductCard";
 import Pagination from "./Pagination";
 import { Product } from "../../types/types";
+import QuickView from "../modals/QuickView";
+import ShopProductCard from "./ShopProductCard";
 
 interface Products {
   products: Product[];
@@ -22,7 +24,7 @@ const Shop3 = ({ products }: Products) => {
       <div className="max-w-[1200px] mt-[46px] lg:mx-auto mx-5">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 max-w-[288px] mx-auto sm:max-w-[592px] md:max-w-[896px] lg:max-w-full lg:grid-cols-4 gap-x-4 gap-y-6">
           {products?.map((product: Product) => (
-            <ShopCard key={product?._id} product={product} />
+            <ShopProductCard key={product?._id} product={product} />
           ))}
         </div>
         <div className="flex justify-center mt-[46px] mb-10 btn-group">
